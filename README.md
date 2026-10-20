@@ -64,4 +64,5 @@ Because GitHub Pages serves the site from a sub-path, the workflow sets `PAGES_B
 - `src-tauri/` — Tauri desktop application and bundle configuration
 - `.github/workflows/deploy.yml` — GitHub Pages deployment
 
+
 The questionnaire responses are held in browser session storage to display the results during the current session.
