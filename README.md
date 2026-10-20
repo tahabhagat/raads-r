@@ -48,11 +48,20 @@ bunx tauri build
 
 Tauri runs the frontend build as part of its build process. Bundles are written under `src-tauri/target/release/bundle/`.
 
+## Deploy to the web
+
+The app is a fully static site, so it can be hosted without a server. The workflow in `.github/workflows/deploy.yml` builds it and publishes it to GitHub Pages on every push to `main`.
+
+One-time setup: in the GitHub repository, go to **Settings → Pages** and set **Source** to **GitHub Actions**. The site is then served at `https://<owner>.github.io/<repo>/`.
+
+Because GitHub Pages serves the site from a sub-path, the workflow sets `PAGES_BASE_PATH=/<repo>` for the build. Local and Tauri builds leave it unset.
+
 ## Project structure
 
 - `app/` — Next.js pages for the home screen, questionnaire, and results
 - `data/questions.json` — questionnaire text
 - `data/categories.json` — question-to-category scoring data
 - `src-tauri/` — Tauri desktop application and bundle configuration
+- `.github/workflows/deploy.yml` — GitHub Pages deployment
 
 The questionnaire responses are held in browser session storage to display the results during the current session.

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="home-shell">
@@ -8,11 +10,11 @@ export default function Home() {
           <p className="home-subtitle">
             Answer a short series of questions to review how your experiences compare across several categories.
           </p>
-          <a href="/question" className="home-link">
+          <Link href="/question" className="home-link">
             <button type="button" className="home-button">
               Start
             </button>
-          </a>
+          </Link>
         </div>
       </div>
     </main>
